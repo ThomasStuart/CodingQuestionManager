@@ -1,0 +1,117 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> View History </title>
+
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+</head>
+
+<style>
+
+  table{
+    border-collapse: collapse;
+    width: 100%;
+    /*margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgb(0, 0, 0, 0.15); */
+  }
+
+  thead tr{
+    background-color: #009879;
+    color:white;
+    text-align: left;
+    font-weight: bold;
+    
+  }
+
+  th, td {
+    padding: 12px 15px;
+    text-align: left;
+  }
+
+   tbody tr{
+    border-bottom: 1px solid lightgray;
+  }
+
+
+  tbody td{
+    text-align: left;
+  
+  }
+
+  tbody tr:nth-last-of-type(even){
+    background-color: #f3f3f3;
+  }
+
+  tbody tr:last-of-type{
+    border-bottom: 2px solid #009879;
+  }
+
+</style>
+
+
+<script>
+    
+   
+    let personalData     = [
+      {Date: '07-27-21', Name:"Construct Binary Tree from Inorder and Postorder Traversal", Type: "Tree", Difficulty: "Medium", Status: "Complete", TimeToComplete:"40:00"},
+      {Date: '08-03-21', Name:"Roman To Integer", Type: "String", Difficulty: "Easy", Status: "Complete", TimeToComplete:"20:00"},
+      {Date: '08-03-21', Name:"Lowest Common Ancestor of a Binary Tree", Type: "Tree", Difficulty: "Medium", Status: "Complete", TimeToComplete:"80:00"}
+    ];
+
+    window.onload = () => {
+      loadTableData(personalData);
+    };
+
+    
+    function loadTableData( personalData ){
+      const tableBody = document.getElementById('tableData');
+      let dataHtml = '';
+
+      for( let data of personalData ){
+          dataHtml += `<tr>
+              <td>${data.Date}</td>
+              <td>${data.Name}</td>
+              <td>${data.Type}</td>
+              <td>${data.Difficulty}</td>
+              <td>${data.Status}</td>
+              <td>${data.TimeToComplete}</td>
+            </tr>`;
+      }
+     
+
+      tableBody.innerHTML = dataHtml;
+    }
+  
+</script>
+
+    <body>
+
+      <h1> Viewing History </h1>
+      
+      <table >
+        <thead> 
+          <tr>
+            <th>Date</th>
+            <th >Name Of Question</th>
+            <th> Type </th>
+            <th> Difficulty </th>
+            <th> Status </th>
+            <th> Time To Complete </th>
+          </tr>
+        </thead>
+        
+        <tbody id="tableData"> </tbody>
+
+      </table>
+    </body>
+
+</html>
